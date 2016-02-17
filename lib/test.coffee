@@ -106,7 +106,7 @@ class Test
       result = tv4.validateResult json, schema
       assert.ok result.valid, """
         Got unexpected response body:
-        #{JSON.stringify(json, null, 4)}
+        #{JSON.stringify(result.error, null, 4)}
         Error
       """
 
