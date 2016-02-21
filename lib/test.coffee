@@ -116,7 +116,9 @@ class Test
       """
       assert.ok result.valid, """
         Got unexpected response body: #{result.error?.message}
-        #{JSON.stringify(json, null, 4)}
+        params: #{JSON.stringify(result.error?.params)}
+        dataPath: #{result.error?.dataPath}
+        json: #{JSON.stringify(json, null, 4)}
         Error
       """
 
