@@ -105,8 +105,10 @@ class Test
       json = validateJson()
       result = tv4.validateResult json, schema
       assert.ok result.valid, """
-        Got unexpected response body:
-        #{JSON.stringify(json, null, 4)}
+        Got unexpected response body: #{result.error?.message}
+        params: #{JSON.stringify(result.error?.params)}
+        dataPath: #{result.error?.dataPath}
+        json: #{JSON.stringify(json, null, 4)}
         Error
       """
 
